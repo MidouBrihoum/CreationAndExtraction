@@ -50,7 +50,7 @@ public class XMLCreator {
         return rootElement;
     }
 
-	void traitement ( List<String> KeywordList, List<Element> messageListe,List<Element> operationListe,String applicationName)   //X est le nom de Operations
+	void traitement ( List<String> KeywordList, List<Element> messageListe,List<Element> operationListe,String applicationName) 
 	 {
 		 try {
                      
@@ -58,25 +58,10 @@ public class XMLCreator {
                        DocumentType doctype = domImpl.createDocumentType("paymentService", "-//CompanyName//DTD CompanyName PaymentService v2//EN", "http://dtd.CompanyName.com/paymentService_v2.dtd");
                         doc.appendChild(doctype);
                         rootElement = doc.createElement("definition");
-                          doc.appendChild(rootElement);		
-                          
-				// abstr element
-//				Element abstr = doc.createElement("abstr");
-//				rootElement.appendChild(abstr);
-//				abstr.setAttribute("id", "abstract");				// set attribute to abstr element
-
-				
-				
+                          doc.appendChild(rootElement);										
 				Element keywords = doc.createElement("keywords");
 				List<Element> keywordList = GetKeywordListFromStringList(KeywordList);
                                 putListOfElementOnRootElement(keywordList, keywords)	;	//ll
-                          
-                                 // abstr.appendChild(keywords);
-                                
-                                
-                                
-                                
-// mettres les message dans la racine abstr depuis une listre de Msgs
 				Element operations = doc.createElement("operations");
 				putListOfElementOnRootElement(operationListe, operations)	;
 
@@ -84,31 +69,16 @@ public class XMLCreator {
                         putListOfElementOnRootElement(messageListe, rootElement)	;
 
                               rootElement.appendChild(operations);
-                              
-                              
-                              //--------- concrét
-                              
-                             
 
-				
-				
-				
-				
-				
-				
-			
-				
-				// write the content into xml file
+				// ecrire le contenu dans un fichié xml 
 				TransformerFactory transformerFactory = TransformerFactory.newInstance();
 				Transformer transformer = transformerFactory.newTransformer();
 				DOMSource source = new DOMSource(doc);
 				StreamResult result = new StreamResult(new File("/Users/retina/Desktop/test/file.xml"));
 
-				// Output to console for testing
-				// StreamResult result = new StreamResult(System.out);
 
 				transformer.transform(source, result);
-				System.out.println("File saved!");
+				System.out.println("Fichier enregistré!");
 
 			  } catch (Exception pce) {
 				pce.printStackTrace();

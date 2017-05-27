@@ -29,7 +29,7 @@
   
   <form id="contact" action="getfilename" method="post" enctype="multipart/form-data">
     <h2 class="copyright" >IBC</h2>
-    <h4 class="copyright">veuillez introduire votre ivc</h4>
+    <h4 class="copyright">veuillez introduire votre IBC</h4>
 
     <fieldset >
       <input placeholder="similarité minimal" type="number" tabindex="1" name="sim" required autofocus>

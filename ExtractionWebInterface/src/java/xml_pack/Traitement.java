@@ -59,27 +59,8 @@ public class Traitement {
 			} else {			
 				System.out.println("la similarité n'est pas suffisante, la ICE numero "+temp+" n'est pas prise en compte "); }
 
-			
-			
-		
-		}
-		
-		
-		
-
-		
-		
+		}		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	//------------------------- Fonctions --------------------------------
 	public Element GetGlobalElementFromXmlFileName (String s){
@@ -91,16 +72,7 @@ public class Traitement {
 	return GlobalElement;
 	}
 
-
-
-
-
-
-
-
-	 Document getDocumentFromXmlFileName (File f)
-
-	{
+         Document getDocumentFromXmlFileName (File f) {
 
 		Document doc=null;
 
